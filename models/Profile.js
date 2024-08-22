@@ -6,12 +6,11 @@ const ProfileSchema = new mongoose.Schema({
     },
     userId : {
         type: mongoose.Types.ObjectId,
-        ref: 'SocialUser',
+        ref: 'SocialUsers',
         required: [true, 'Please provide a user']
     },
     avi: {
         type: String
     }
-})
-
+},{timestamps: true})
 module.exports = mongoose.model('Profile', ProfileSchema)
