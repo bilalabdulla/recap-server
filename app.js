@@ -36,6 +36,10 @@ app.use('/api/v1/profile', imageUpload.single('file'), profileRouter)
 app.use('/api/v1/images', imageUpload.single('file'), imagesRouter)
 app.use('/api/v1/chats', authenticateUser, chatsRouter)
 
+app.get('/', (req, res) => {
+    res.status(200).json({ message: "nice"})
+})
+
 const port = process.env.PORT || 9000
 
 const start = async () => {
